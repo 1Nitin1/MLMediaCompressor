@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MLImageCompressor"
+version = "0.1.0"
+description = "Image compression using KMeans clustering"
+authors = [{ name="Nitin Baranwal" }]
+dependencies = ["numpy", "Pillow", "scikit-learn"]
+readme = "README.md"
+license = { text = "MIT" }
+
+[project.scripts]
+compress-image = "myimagecompressor.cli:main"
