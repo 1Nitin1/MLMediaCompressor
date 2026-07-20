@@ -12,4 +12,4 @@ readme = "README.md"
 license = { text = "MIT" }
 
 [project.scripts]
-compress-image = "myimagecompressor.cli:main"
+compress-image = "MLImageCompressor.cli:main"

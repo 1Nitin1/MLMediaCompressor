@@ -20,6 +20,16 @@ from MLImageCompressor import compress_image
 # Compress an image to 16 colors and save as "compressed.jpeg"
 compress_image("butterfly.jpg", n_colors=16, saveas="compressed")
 ```
+## 🖥️ Command-Line Usage
+
+After installing, you can run the compressor directly from the terminal:
+
+```bash
+compress-image <input_file> [options]
+
+compress-image butterfly.jpg --n_colors 16 --quality 80 --saveas myoutput
+
+```
 ## Parameters
 - url (str): Path to the input image file.
 
