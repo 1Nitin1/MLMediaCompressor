@@ -1,6 +1,6 @@
-# MLImageCompressor
+# MLMediaCompressor
 
-Image compression using **KMeans clustering**.  
+Image/Video compression using **KMeans clustering**.  
 This library reduces the color complexity of images by clustering pixel values into a limited palette, producing visually compressed images with fewer colors.
 
 ---
@@ -10,24 +10,31 @@ This library reduces the color complexity of images by clustering pixel values i
 You can install directly from GitHub:
 
 ```bash
-pip install git+https://github.com/1Nitin1/MLImageCompressor.git
+pip install git+https://github.com/1Nitin1/MLMediaCompressor.git
 
 ```
 # Usage
 ```python
-from MLImageCompressor import compress_image
+from MLMediaCompressor import compress_image, compress_video
 
-# Compress an image to 16 colors and save as "compressed.jpeg"
-compress_image("butterfly.jpg", n_colors=16, saveas="compressed")
+# Compress image
+compress_image("input.png", n_colors=12, saveas="output")
+
+# Compress video
+compress_video("input.mov", n_colors=16, saveas="output_video")
+
 ```
 ## 🖥️ Command-Line Usage
 
 After installing, you can run the compressor directly from the terminal:
 
 ```bash
-compress-image <input_file> [options]
+# Image compression
+mlcompress image input.png --n_colors 12 --quality 80 --saveas out
 
-compress-image butterfly.jpg --n_colors 16 --quality 80 --saveas myoutput
+# Video compression (MOV auto-converts to MP4)
+mlcompress video input.mov --n_colors 16 --saveas out
+
 
 ```
 ## Parameters
@@ -35,28 +42,29 @@ compress-image butterfly.jpg --n_colors 16 --quality 80 --saveas myoutput
 
 - n_colors (int): Number of colors (clusters) to reduce to. Default = 50.
 
-- quality (int): JPEG quality (1–95). Default = 50.
+- **Only for image** quality (int): JPEG quality (1–95). Default = 50.
 
 - saveas (str): Output filename (without extension). Default = "compressed_image".
 
 ## Returns:
 
-- A PIL.Image.Image object representing the compressed image
+- A PIL.Image.Image object representing the compressed image.
+- A mp4 file representing the compressed video.
 
 # Features
-- Reduce image color palette using KMeans clustering.
+- Image compression using KMeans color quantization
 
-- Adjustable number of colors and JPEG quality.
+- Video compression (frame‑wise KMeans)
 
-- Save compressed images easily with a single function call.
+- Automatic .mov → .mp4 conversion for compatibility
 
-- Returns a PIL image object for further processing.
+- CLI support for quick usage from terminal
 
 # Development
 Clone the repo and install dependencies:
 ```bash
-git clone https://github.com/yourusername/myimagecompressor.git
-cd myimagecompressor
+git clone https://github.com/yourusername/MLMediaCompressor.git
+cd MLMediaCompressor
 pip install -r requirements.txt
 ```
 # Contributing
