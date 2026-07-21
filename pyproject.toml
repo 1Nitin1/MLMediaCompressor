@@ -5,16 +5,15 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "MLMediaCompressor"
 version = "0.1.2"
-description = "Image compression using KMeans clustering"
-authors = [{ name="Nitin Baranwal" }]
+description = "ML-based image and video compression library with CLI"
+authors = [{ name="Nitin Baranwal", email='nitinkumarbaranawal@gmail.com' }]
 dependencies = ["numpy",
     "scikit-learn",
     "opencv-python",
     "Pillow",  
-    "tqdm",    
-    "colorama"  ]
+]
 readme = "README.md"
-license = { text = "MIT" }
+license = { file = "LICENSE" }
 
 [project.scripts]
 mlcompress="MLMediaCompressor.cli:main"
