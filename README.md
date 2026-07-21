@@ -1,16 +1,23 @@
 # MLMediaCompressor
 
-Image/Video compression using **KMeans clustering**.  
-This library reduces the color complexity of images by clustering pixel values into a limited palette, producing visually compressed images with fewer colors.
+ML‑based image and video color complexity compression library with CLI support.
 
 ---
+# Features
+- Image compression using KMeans color quantization
+
+- Video compression (frame‑wise KMeans)
+
+- Automatic .mov → .mp4 conversion for compatibility
+
+- CLI support for quick usage from terminal
 
 ## 🚀 Installation
 
-You can install directly from GitHub:
+You can install directly using pip:
 
 ```bash
-pip install git+https://github.com/1Nitin1/MLMediaCompressor.git
+pip install MLMediaCompressor
 
 ```
 # Usage
@@ -38,37 +45,29 @@ mlcompress video input.mov --n_colors 16 --saveas out
 
 ```
 ## Parameters
-- url (str): Path to the input image file.
+### Common (Image & Video)
+- path (str): Path to the input file.
+    - For images: supported formats like .png, .jpeg.
+    - For videos: supported formats .mp4 and .mov (MOV is auto‑converted to MP4).
 
-- n_colors (int): Number of colors (clusters) to reduce to. Default = 50.
+- n_colors (int): Number of color clusters (KMeans) to reduce to. Default = 50 for images, 20 for videos.
 
-- **Only for image** quality (int): JPEG quality (1–95). Default = 50.
+- saveas (str): Output filename (without extension)
+    - Default = "compressed_image" for images
+    - Default = "compressed_video" for videos.
 
-- saveas (str): Output filename (without extension). Default = "compressed_image".
+### Image‑specific
+- quality (int): JPEG quality (1–95). Default = 50.
+    - Only applies when saving compressed images.
 
 ## Returns:
 
 - A PIL.Image.Image object representing the compressed image.
 - A mp4 file representing the compressed video.
 
-# Features
-- Image compression using KMeans color quantization
-
-- Video compression (frame‑wise KMeans)
-
-- Automatic .mov → .mp4 conversion for compatibility
-
-- CLI support for quick usage from terminal
-
-# Development
-Clone the repo and install dependencies:
-```bash
-git clone https://github.com/yourusername/MLMediaCompressor.git
-cd MLMediaCompressor
-pip install -r requirements.txt
-```
 # Contributing
-- Pull requests are welcome!
+- github: https://github.com/1Nitin1/MLMediaCompressor
+- Fork, branch, PR workflow
 - For major changes, please open an issue first to discuss what you’d like to change.
 
 # License
