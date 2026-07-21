@@ -7,7 +7,12 @@ name = "MLMediaCompressor"
 version = "0.1.2"
 description = "Image compression using KMeans clustering"
 authors = [{ name="Nitin Baranwal" }]
-dependencies = ["numpy", "Pillow", "scikit-learn","os","subprocess","cv2"]
+dependencies = ["numpy",
+    "scikit-learn",
+    "opencv-python",
+    "Pillow",  
+    "tqdm",    
+    "colorama"  ]
 readme = "README.md"
 license = { text = "MIT" }
 
