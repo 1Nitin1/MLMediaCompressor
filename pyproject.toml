@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "MLMediaCompressor"
-version = "0.1.2"
+version = "0.1.3"
 description = "ML-based image and video compression library with CLI"
 authors = [{ name="Nitin Baranwal", email='nitinkumarbaranawal@gmail.com' }]
 dependencies = ["numpy",
